@@ -1,9 +1,6 @@
 #!/bin/bash
+webdir="img/art" # Where are the images going?
 
-#No trailing slashes on either of these
-imgdst="/var/www/html/img/art" # Where's everything gonna go?
-webdir="/img/art" # Where's the webpage gonna look for images?
-
-mogrify -path $imgdst/$1/thumbs -thumbnail '115x115^' -gravity center -extent 115x115x $2
-mv $2 $imgdst/$1/
+mogrify -path /var/www/html/$webdir/$1/thumbs -thumbnail '115x115^' -gravity center -extent 115x115x $2
+mv $2 /var/www/html/$webdir/$1/
 sed -i '/<!-- Gallery --!>/a <a href="'$webdir'/'$1'/'$2'"><img src="'$webdir'/'$1'/thumbs/'$2'"></a>' /var/www/html/$1.html
