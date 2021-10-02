@@ -1,5 +1,6 @@
 #!/bin/bash
-filepath="/mnt/d/Apps/xampp/htdocs/nek.zone" # Alright bub, where on the file system is your website?
+# NO TRAILING SLASH ON EITHER OF THESE
+filepath="/var/www/nek.zone" # Alright bub, where on the file system is your website?
 webdir="img/art" # Where are the images going?
 
 mogrify -path $filepath/$webdir/$1/thumbs -thumbnail '115x115^' -gravity center -extent 115x115x $2
