@@ -1,6 +1,7 @@
 #!/bin/bash
+filepath="/mnt/d/Apps/xampp/htdocs/nek.zone" # Alright bub, where on the file system is your website?
 webdir="img/art" # Where are the images going?
 
-mogrify -path /var/www/html/$webdir/$1/thumbs -thumbnail '115x115^' -gravity center -extent 115x115x $2
-mv $2 /var/www/html/$webdir/$1/
-sed -i '/<!-- Gallery --!>/a <a href="'$webdir'/'$1'/'$2'"><img src="'$webdir'/'$1'/thumbs/'$2'"></a>' /var/www/html/$1.html
+mogrify -path $filepath/$webdir/$1/thumbs -thumbnail '115x115^' -gravity center -extent 115x115x $2
+mv $2 $filepath/$webdir/$1/
+sed -i '/<!-- Gallery -->/a <a data-fancybox="gallery" href="/'$webdir'/'$1'/'$2'"><img src="/'$webdir'/'$1'/thumbs/'$2'"></a>' $filepath/art/$1.html
