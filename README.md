@@ -9,9 +9,3 @@ Nektool can be used both locally or remotely on your server. It also works with 
 - Change the ``webdir`` variable to wherever on the website your gallery images are going to be stored.
 - Upload your image file to whatever folder on your server you like.
 - Navigate to that folder and run ``nektool [PAGENAME] [IMAGEFILE]``
-
-## Known Issues
-I'm a complete dingus when it comes to coding.
-
-- It doesn't play nice with .gifs at all.
-- There really is no idiot-proofing here. You gotta ``mkdir`` all of your directories, otherwise it's gonna bitch.
