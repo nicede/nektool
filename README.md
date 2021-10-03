@@ -1,11 +1,17 @@
 # Nektool
-Admittedly inspired by [lb](https://github.com/LukeSmithxyz/lb). An incredibly esoteric utility for updating static HTML image galleries. ``Imagemagick`` and ``sed`` are both required.
+An esoteric utility for updating static HTML image galleries. ``Imagemagick`` and ``sed`` are both required. Very much inspired by [lb](https://github.com/LukeSmithxyz/lb).
 
 ## Usage
-Upload ``nektool`` to your server's ``bin`` directory and run it in the directory where your target image is:
+Nektool can be used both locally or remotely on your server. It also works with Windows Subsystem for Linux.
 
-```
-nektool PAGENAME FILENAME_WITH_NO_SPACES
-```
+- Add ``nektool`` to your system's ``bin`` directory.
+- Edit ``/bin/nektool`` and change the ``filepath`` variable to wherever your website files are located.
+- Change the ``webdir`` variable to wherever on the website your gallery images are going to be stored.
+- Upload your image file to whatever folder on your server you like.
+- Navigate to that folder and run ``nektool [PAGENAME] [IMAGEFILE]``
 
-The changes will be made to ``PAGENAME.html``. Make sure that ``PAGENAME.html`` has the marker ``<!-- Gallery --!>`` wherever you want your gallery images to be displayed.
+## Known Issues
+I'm a complete dingus when it comes to coding.
+
+- It doesn't play nice with .gifs at all.
+- There really is no idiot-proofing here. You gotta ``mkdir`` all of your directories, otherwise it's gonna bitch.
