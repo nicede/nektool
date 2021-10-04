@@ -1,6 +1,6 @@
 #!/bin/bash
 
-webdir="/mnt/d/Apps/xampp/htdocs/nek.zone"
+webdir="/var/www/nek.zone"
 imgdir="img/art"
 webpage="art/$1.html"
 
