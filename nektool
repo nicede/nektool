@@ -1,8 +1,9 @@
 #!/bin/bash
-# NO TRAILING SLASH ON EITHER OF THESE
-filepath="/var/www/nek.zone" # Alright bub, where on the file system is your website?
-webdir="img/art" # Where are the images going?
+
+webdir="/var/www/nek.zone"
+imgdir="img/art"
+webpage="art/2021.html"
 
 mogrify -path $filepath/$webdir/$1/thumbs -thumbnail '115x115^' -gravity center -extent 115x115x $2
 mv $2 $filepath/$webdir/$1/
-sed -i '/<!-- Gallery -->/a <a data-fancybox="gallery" href="/'$webdir'/'$1'/'$2'"><img src="/'$webdir'/'$1'/thumbs/'$2'"></a>' $filepath/art/$1.html
+sed -i '/<!-- Gallery -->/a <a data-fancybox="gallery" href="/'$webdir'/'$1'/'$2'"><img src="/'$webdir'/'$1'/thumbs/'$2'"></a>' $filepath/$webpage
