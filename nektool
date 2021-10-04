@@ -1,9 +1,10 @@
 #!/bin/bash
 
-webdir="/var/www/nek.zone"
+webdir="/mnt/d/Apps/xampp/htdocs/nek.zone"
 imgdir="img/art"
-webpage="art/2021.html"
+webpage="art/$1.html"
 
-mogrify -path $filepath/$webdir/$1/thumbs -thumbnail '115x115^' -gravity center -extent 115x115x $2
-mv $2 $filepath/$webdir/$1/
-sed -i '/<!-- Gallery -->/a <a data-fancybox="gallery" href="/'$webdir'/'$1'/'$2'"><img src="/'$webdir'/'$1'/thumbs/'$2'"></a>' $filepath/$webpage
+mogrify -path $webdir/$imgdir/$1/thumbs -thumbnail '115x115^' -gravity center -extent 115x115x $2
+mv $2 $webdir/$imgdir/$1/
+# You may have to remove the .. and fancybox stuff from the URLs below. This is just configured to work smoothly with my own website.
+sed -i '/<!-- Gallery -->/a <a data-fancybox="gallery" href="../'$imgdir'/'$1'/'$2'"><img src="../'$imgdir'/'$1'/thumbs/'$2'"></a>' $webdir/$webpage
