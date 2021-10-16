@@ -1,5 +1,5 @@
 # Nektool
-An esoteric utility for updating static HTML image galleries. ``Imagemagick`` and ``sed`` are both required. Very much inspired by [lb](https://github.com/LukeSmithxyz/lb).
+An esoteric utility for updating static HTML image galleries. ``Imagemagick`` and ``sed`` are both required.
 
 ## Usage
 I primarily designed this tool to be used remotely on a server, but can also be configured to run locally if you prefer editing offline.
