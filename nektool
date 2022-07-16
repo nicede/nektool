@@ -6,5 +6,4 @@ webpage="art/$1.html"
 
 mogrify -path $webdir/$imgdir/$1/thumbs -thumbnail '115x115^' -gravity center -extent 115x115x $2
 mv $2 $webdir/$imgdir/$1/
-# You may have to remove the .. and fancybox stuff from the URLs below. This is just configured to work smoothly with my own website.
-sed -i '/<!-- Gallery -->/a <a data-fancybox="gallery" href="../'$imgdir'/'$1'/'$2'"><img src="../'$imgdir'/'$1'/thumbs/'$2'"></a>' $webdir/$webpage
+sed -i '/<!-- Gallery -->/a <a href="../'$imgdir'/'$1'/'$2'"><img src="../'$imgdir'/'$1'/thumbs/'$2'"></a>' $webdir/$webpage
